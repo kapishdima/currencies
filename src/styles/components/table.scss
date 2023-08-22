@@ -1,0 +1,50 @@
+.currency-table {
+  width: 100%;
+  margin: 12px auto 36px;
+  padding: 0;
+  border: none;
+  border-collapse: collapse;
+  counter-reset: ratelist-extra-info;
+
+  thead {
+    inset-block-start: 0;
+  }
+
+  th {
+    font-size: 14pt;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 2px;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+
+    border-top: 3px solid #d90002;
+    border-bottom: 3px solid #d90002;
+  }
+
+  td {
+    border-bottom: 1px solid rgba(48, 0, 0, 0.2);
+    white-space: nowrap;
+
+    font-size: 14pt;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 2px;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+
+    img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  tr {
+    td:nth-child(4),
+    td:nth-child(5) {
+      font-weight: 500;
+    }
+  }
+}
