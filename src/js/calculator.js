@@ -1,6 +1,8 @@
 import { fetchCurrencies } from "./api";
 import { createSelect, appendSelectData } from "./select";
 
+const toFloat = (data) => parseFloat(data.replace(",", "."));
+
 export const createCalculator = async () => {
   const selectEls = document.querySelectorAll('[data-el="select"]');
   const currencies = await fetchCurrencies();
@@ -112,29 +114,29 @@ const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
   const to = currencies.find((currency) => currency[0] === toCurrency);
 
   if (fromCurrency === "CZK") {
-    const toRate = parseFloat(to[3]);
+    const toRate = toFloat(to[2]);
 
     const convertedAmount = amount / toRate;
 
-    return Math.ceil(convertedAmount);
+    return convertedAmount.toFixed(2);
   }
 
   if (toCurrency === "CZK") {
-    const fromRate = parseFloat(from[2]);
+    const fromRate = toFloat(from[2]);
 
     const convertedAmount = amount * fromRate;
 
-    return Math.ceil(convertedAmount);
+    return convertedAmount.toFixed(2);
   }
 
   if (!from || !to) {
     return;
   }
 
-  const fromRate = parseFloat(from[3]);
-  const toRate = parseFloat(to[2]);
+  const fromRate = toFloat(from[3]);
+  const toRate = toFloat(to[2]);
 
   const convertedAmount = (amount * fromRate) / toRate;
 
-  return Math.ceil(convertedAmount);
+  return convertedAmount.toFixed(3);
 };
