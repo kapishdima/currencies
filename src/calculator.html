@@ -127,7 +127,7 @@
             <!-- Select From -->
             <div class="currency-select">
               <label for="select-from">Mám měnu </label>
-              <div class="select" id="select-from">
+              <div class="select" id="select-from" data-el="select">
                 <!-- Select Input Start -->
                 <div class="select-input" data-el="select-input">
                   <div class="select-input__icon">
@@ -144,9 +144,22 @@
                   >
                     CZK
                   </div>
+                  <div class="select-input__carret">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="Isolation_Mode"
+                      data-name="Isolation Mode"
+                      viewBox="0 0 24 24"
+                      width="512"
+                      height="512"
+                    >
+                      <path d="M5,9H19l-6.293,6.293a1,1,0,0,1-1.414,0Z" />
+                    </svg>
+                  </div>
                 </div>
 
                 <!-- Select Input End -->
+                <div class="select-dropdown" data-el="select-dropdown"></div>
               </div>
             </div>
 
