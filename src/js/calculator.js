@@ -31,6 +31,9 @@ export const createCalculator = async () => {
 
     const result = convertCurrency(value, fromCurrency, toCurrency, currencies);
 
+    console.log(fromCurrency);
+    console.log(toCurrency);
+
     toInput.value = result;
   });
 
@@ -106,6 +109,15 @@ export const createCalculator = async () => {
 
     fromFlagEl.src = toFlag;
     toFlagEl.src = fromFlag;
+
+    const result = convertCurrency(
+      fromAmount,
+      toCurrency,
+      fromCurrency,
+      currencies
+    );
+
+    fromInput.value = result;
   });
 };
 
@@ -114,7 +126,7 @@ const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
   const to = currencies.find((currency) => currency[0] === toCurrency);
 
   if (fromCurrency === "CZK") {
-    const toRate = toFloat(to[2]);
+    const toRate = toFloat(to[3]);
 
     const convertedAmount = amount / toRate;
 
@@ -133,8 +145,8 @@ const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
     return;
   }
 
-  const fromRate = toFloat(from[3]);
-  const toRate = toFloat(to[2]);
+  const fromRate = toFloat(from[2]);
+  const toRate = toFloat(to[3]);
 
   const convertedAmount = (amount * fromRate) / toRate;
 
