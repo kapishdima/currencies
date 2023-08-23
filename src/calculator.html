@@ -12,21 +12,8 @@
     />
   </head>
 
-  <body>
+  <body id="calculator">
     <div class="container">
-      <table class="currency-table">
-        <thead>
-          <tr>
-            <th>Měna</th>
-            <th>Kód</th>
-            <th>Množství</th>
-            <th>Kupu­jeme</th>
-            <th>Prodá­váme</th>
-          </tr>
-        </thead>
-        <tbody data-el="tbody"></tbody>
-      </table>
-
       <div class="currency-calculator">
         <h2 class="title">KALKULÁTOR NEJVÝHODNĚJŠÍCH KURZŮ</h2>
         <h3 class="subtitle">
@@ -140,12 +127,12 @@
             <!-- Select From -->
             <div class="currency-select">
               <label for="select-from">Mám měnu </label>
-              <div class="select" id="select-from" data-el="select">
+              <div class="select" id="select-from">
                 <!-- Select Input Start -->
                 <div class="select-input" data-el="select-input">
                   <div class="select-input__icon">
                     <img
-                      src="/assets/images/flags/usd.svg"
+                      src="/assets/images/flags/czk.svg"
                       alt="usd"
                       data-el="select-icon"
                     />
@@ -155,24 +142,11 @@
                     data-el="select-value"
                     data-select="to"
                   >
-                    USD
-                  </div>
-                  <div class="select-input__carret">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      id="Isolation_Mode"
-                      data-name="Isolation Mode"
-                      viewBox="0 0 24 24"
-                      width="512"
-                      height="512"
-                    >
-                      <path d="M5,9H19l-6.293,6.293a1,1,0,0,1-1.414,0Z" />
-                    </svg>
+                    CZK
                   </div>
                 </div>
 
                 <!-- Select Input End -->
-                <div class="select-dropdown" data-el="select-dropdown"></div>
               </div>
             </div>
 

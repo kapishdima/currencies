@@ -65,7 +65,12 @@ const cssLoaders = (extra) => {
 const setupPlugins = () => {
   let defaultPlugins = [
     new HtmlWebpackPlugin({
-      template: "./index.html",
+      template: "./table.html",
+      filename: "table.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./calculator.html",
+      filename: "calculator.html",
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
