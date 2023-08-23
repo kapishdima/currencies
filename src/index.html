@@ -26,6 +26,168 @@
         </thead>
         <tbody data-el="tbody"></tbody>
       </table>
+
+      <div class="currency-calculator">
+        <h2 class="title">KALKULÁTOR NEJVÝHODNĚJŠÍCH KURZŮ</h2>
+        <h3 class="subtitle">
+          Porovnejte si, kde dostanete nejvýhodnější valutový kurz
+        </h3>
+        <p class="text">
+          V kurzovém kalkulátoru s přehledem zjistíte a porovnáte nabídky našich
+          valutových kurzů s valutovými kurzy bank. Díky směnám bez poplatků
+          ihned znáte přesnou částku, kterou za směnu získáte.
+        </p>
+        <p class="text">
+          Všechny hotovostní směny ve směnárně společnosti EXCHANGE s.r.o. jsou
+          bez poplatků. Směnárenské služby v bankách jsou zpravidla zatíženy
+          dalšími poplatky za zpracování hotovosti, které u nás nenajdete.
+        </p>
+
+        <div class="calculator">
+          <div class="calculator-row">
+            <!-- Select From -->
+            <div class="currency-select">
+              <label for="select-from">Mám měnu </label>
+              <div class="select" id="select-from" data-el="select">
+                <!-- Select Input Start -->
+                <div class="select-input" data-el="select-input">
+                  <div class="select-input__icon">
+                    <img
+                      src="/assets/images/flags/usd.svg"
+                      alt="usd"
+                      data-el="select-icon"
+                    />
+                  </div>
+                  <div
+                    class="select-input__value"
+                    data-el="select-value"
+                    data-select="from"
+                  >
+                    USD
+                  </div>
+                  <div class="select-input__carret">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="Isolation_Mode"
+                      data-name="Isolation Mode"
+                      viewBox="0 0 24 24"
+                      width="512"
+                      height="512"
+                    >
+                      <path d="M5,9H19l-6.293,6.293a1,1,0,0,1-1.414,0Z" />
+                    </svg>
+                  </div>
+                </div>
+                <!-- Select Input End -->
+
+                <div class="select-dropdown" data-el="select-dropdown"></div>
+              </div>
+            </div>
+
+            <div class="text-input">
+              <label for="amount-value">Chci vyměnit </label>
+              <input
+                type="number"
+                class="input"
+                id="amount-value"
+                data-el="from"
+              />
+            </div>
+
+            <div class="calculator-reverce" data-el="reverse-button">
+              <svg
+                version="1.1"
+                id="compare-btn"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 40 40"
+              >
+                <style type="text/css">
+                  .st0 {
+                    fill: none;
+                    stroke: #d90202;
+                    stroke-linecap: round;
+                    stroke-linejoin: round;
+                    stroke-miterlimit: 10;
+                  }
+                </style>
+                <circle fill="#fff" cx="20" cy="20" r="15.75"></circle>
+                <g>
+                  <circle fill="#ffe472" cx="20" cy="20" r="8.3382"></circle>
+                  <path
+                    class="st0"
+                    d="M28.2402,18.7171c0.0646,0.4182,0.0981,0.8466,0.0981,1.2829c0,4.6051-3.7332,8.3382-8.3382,8.3382S11.6618,24.6051,11.6618,20S15.3949,11.6618,20,11.6618c2.0932,0,4.0063,0.7713,5.4705,2.0452M14.9044 18.1471l5.0956 5.0956l9.9826-9.9826"
+                  ></path>
+                </g>
+                <g id="compare-btn-anim">
+                  <path
+                    class="st0"
+                    d="M5.1142,14.8413C7.2504,8.6764,13.1083,4.25,20,4.25c8.6985,0,15.75,7.0515,15.75,15.75c0,0.556-0.0288,1.1053-0.085,1.6465M34.8858,25.1587C32.7496,31.3236,26.8917,35.75,20,35.75c-8.6985,0-15.75-7.0515-15.75-15.75c0-0.556,0.0288-1.1053,0.085-1.6465M10.0986 13.2217l-4.9844 1.6196l-1.6196-4.9844M29.9014 26.7783l4.9844-1.6196l1.6196 4.9844"
+                  ></path>
+                  <rect width="40" height="40" opacity="0"></rect>
+                  <animateTransform
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    values="0 20 20;-180 20 20"
+                    dur="1s"
+                    repeatCount="1"
+                    begin="indefinite"
+                  ></animateTransform>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Select From -->
+            <div class="currency-select">
+              <label for="select-from">Mám měnu </label>
+              <div class="select" id="select-from" data-el="select">
+                <!-- Select Input Start -->
+                <div class="select-input" data-el="select-input">
+                  <div class="select-input__icon">
+                    <img
+                      src="/assets/images/flags/usd.svg"
+                      alt="usd"
+                      data-el="select-icon"
+                    />
+                  </div>
+                  <div
+                    class="select-input__value"
+                    data-el="select-value"
+                    data-select="to"
+                  >
+                    USD
+                  </div>
+                  <div class="select-input__carret">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="Isolation_Mode"
+                      data-name="Isolation Mode"
+                      viewBox="0 0 24 24"
+                      width="512"
+                      height="512"
+                    >
+                      <path d="M5,9H19l-6.293,6.293a1,1,0,0,1-1.414,0Z" />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Select Input End -->
+                <div class="select-dropdown" data-el="select-dropdown"></div>
+              </div>
+            </div>
+
+            <div class="text-input">
+              <label for="amount-value">Chci vyměnit </label>
+              <input
+                type="number"
+                class="input"
+                id="amount-value"
+                data-el="to"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
