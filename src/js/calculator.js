@@ -99,13 +99,9 @@ export const createCalculator = async () => {
     const toFlag = toFlagEl.src;
 
     const fromAmount = fromInput.value || 0;
-    const toAmount = toInput.value || 0;
 
     fromSelect.innerText = toCurrency;
     toSelect.innerText = fromCurrency;
-
-    fromInput.value = toAmount;
-    toInput.value = fromAmount;
 
     fromFlagEl.src = toFlag;
     toFlagEl.src = fromFlag;
@@ -117,7 +113,7 @@ export const createCalculator = async () => {
       currencies
     );
 
-    fromInput.value = result;
+    toInput.value = result;
   });
 };
 
