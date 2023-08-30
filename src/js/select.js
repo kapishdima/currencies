@@ -19,6 +19,7 @@ export const appendSelectData = (select, currencies) => {
     return;
   }
 
+  currencies.reverse();
   currencies.forEach((currency) => {
     const tmpl = `
             <div
@@ -34,6 +35,7 @@ export const appendSelectData = (select, currencies) => {
         `;
     dropdown.insertAdjacentHTML("afterBegin", tmpl);
   });
+  currencies.reverse();
 
   Array.from(dropdown.children).forEach((child) => {
     child.addEventListener("click", () => {
