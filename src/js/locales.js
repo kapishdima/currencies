@@ -65,6 +65,6 @@ export const setTranslatableValues = () => {
     const fieldValue = field.innerText;
     const value = translations[locale][fieldValue];
 
-    field.innerText = value;
+    field.textContent = value;
   });
 };
