@@ -38,6 +38,11 @@
     img {
       width: 45px;
       height: 45px;
+
+      @media screen and (max-width: 425px) {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 
@@ -54,6 +59,10 @@
     td:nth-child(2),
     th:nth-child(2) {
       text-align: left;
+
+      @media screen and (max-width: 425px) {
+        display: none;
+      }
     }
 
     td:nth-child(4),
