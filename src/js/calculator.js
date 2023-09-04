@@ -134,6 +134,10 @@ const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
     return convertedAmount.toFixed(2);
   }
 
+  if (toCurrency === fromCurrency) {
+    return (amount * 1).toFixed(2);
+  }
+
   if (!from || !to) {
     return;
   }
