@@ -23,7 +23,7 @@ const createTableRows = (data) => {
         const link = document.createElement("a");
 
         link.innerText = value;
-        link.href = currency.enpage;
+        link.href = currency.url[locale];
 
         td.appendChild(link);
         tr.appendChild(td);

@@ -25,9 +25,11 @@ export const fetchCurrencies = async () => {
     },
     buyRate: currency[6],
     sellRate: currency[7],
-    czpage: currency[8] || "",
-    enpage: currency[9] || "",
-    uapage: currency[10] || "",
-    rupage: currency[11] || "",
+    url: {
+      cz: currency[8] || "",
+      en: currency[9] || "",
+      ua: currency[10] || "",
+      ru: currency[11] || "",
+    },
   }));
 };
