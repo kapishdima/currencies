@@ -2,6 +2,8 @@ const CURRENCIES_UPDATES_API =
   "https://sheets.googleapis.com/v4/spreadsheets/1cBEIpirL1ue-pFmWh2pIuKfdjWs29ztVBveNLLDVmgg/values/rates?alt=json&key=AIzaSyDr4tzhcbs4p30pk0s-4tIGX-WqZIS6GSo";
 const UPDATES_VALUES_OFFSET = 4;
 
+export const VISIBLE_COLUMNS = ["name", "qty", "code", "buyRate", "sellRate"];
+
 export const fetchCurrencies = async () => {
   const currenciesUpdates = await fetch(CURRENCIES_UPDATES_API).then((res) =>
     res.json()
@@ -12,5 +14,20 @@ export const fetchCurrencies = async () => {
   }
 
   const currencies = currenciesUpdates.values.slice(UPDATES_VALUES_OFFSET);
-  return currencies;
+  return currencies.map((currency) => ({
+    code: currency[0],
+    qty: currency[1],
+    name: {
+      cz: currency[2],
+      en: currency[3],
+      ru: currency[4],
+      ua: currency[5],
+    },
+    buyRate: currency[6],
+    sellRate: currency[7],
+    czpage: currency[8] || "",
+    enpage: currency[9] || "",
+    uapage: currency[10] || "",
+    rupage: currency[11] || "",
+  }));
 };

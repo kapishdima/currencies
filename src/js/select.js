@@ -24,13 +24,13 @@ export const appendSelectData = (select, currencies) => {
     const tmpl = `
             <div
                 class="select-dropdown__item"
-                data-value="${currency[0]}"
+                data-value="${currency.code}"
                 data-el="dropdown-item"
             >
                 <div class="select-dropdown__item-icon">
-                    <img src="/assets/images/flags/${currency[0].toLowerCase()}.svg" alt="" />
+                    <img src="/assets/images/flags/${currency.code.toLowerCase()}.svg" alt="" />
                 </div>
-                <div class="select-dropdown__item-label">${currency[0]}</div>
+                <div class="select-dropdown__item-label">${currency.code}</div>
             </div>
         `;
     dropdown.insertAdjacentHTML("afterBegin", tmpl);

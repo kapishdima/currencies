@@ -31,9 +31,6 @@ export const createCalculator = async () => {
 
     const result = convertCurrency(value, fromCurrency, toCurrency, currencies);
 
-    console.log(fromCurrency);
-    console.log(toCurrency);
-
     toInput.value = result;
   });
 
@@ -118,11 +115,11 @@ export const createCalculator = async () => {
 };
 
 const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
-  const from = currencies.find((currency) => currency[0] === fromCurrency);
-  const to = currencies.find((currency) => currency[0] === toCurrency);
+  const from = currencies.find((currency) => currency.code === fromCurrency);
+  const to = currencies.find((currency) => currency.code === toCurrency);
 
   if (fromCurrency === "CZK") {
-    const toRate = toFloat(to[3]);
+    const toRate = toFloat(to.sellRate);
 
     const convertedAmount = amount / toRate;
 
@@ -130,7 +127,7 @@ const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
   }
 
   if (toCurrency === "CZK") {
-    const fromRate = toFloat(from[2]);
+    const fromRate = toFloat(from.buyRate);
 
     const convertedAmount = amount * fromRate;
 
@@ -141,8 +138,8 @@ const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
     return;
   }
 
-  const fromRate = toFloat(from[2]);
-  const toRate = toFloat(to[3]);
+  const fromRate = toFloat(from.buyRate);
+  const toRate = toFloat(to.sellRate);
 
   const convertedAmount = (amount * fromRate) / toRate;
 

@@ -1,23 +1,38 @@
-import { fetchCurrencies } from "./api";
+import { VISIBLE_COLUMNS, fetchCurrencies } from "./api";
+import { getLocale } from "./locales";
 
 const tableSelector = '[data-el="tbody"]';
 
 const createTableRows = (data) => {
-  return data.map((record) => {
+  return data.map((currency) => {
     const tr = document.createElement("tr");
 
     const td = document.createElement("td");
     const img = document.createElement("img");
-    img.src = `/assets/images/flags/${record[0].toLowerCase()}.svg`;
+    img.src = `/assets/images/flags/${currency.code.toLowerCase()}.svg`;
 
     td.appendChild(img);
     tr.appendChild(td);
 
-    for (const column of record) {
+    for (const column of VISIBLE_COLUMNS) {
       const td = document.createElement("td");
 
-      td.innerText = column;
-      tr.appendChild(td);
+      if (column === "name") {
+        const locale = getLocale();
+        const value = currency[column][locale];
+        const link = document.createElement("a");
+
+        link.innerText = value;
+        link.href = currency.enpage;
+
+        td.appendChild(link);
+        tr.appendChild(td);
+      } else {
+        const value = currency[column];
+
+        td.innerText = value;
+        tr.appendChild(td);
+      }
     }
 
     return tr;

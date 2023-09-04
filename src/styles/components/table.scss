@@ -41,7 +41,21 @@
     }
   }
 
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   tr {
+    td:nth-child(2),
+    th:nth-child(2) {
+      text-align: left;
+    }
+
     td:nth-child(4),
     td:nth-child(5) {
       font-weight: 500;
