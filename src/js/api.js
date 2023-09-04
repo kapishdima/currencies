@@ -20,8 +20,8 @@ export const fetchCurrencies = async () => {
     name: {
       cz: currency[2],
       en: currency[3],
-      ru: currency[4],
-      ua: currency[5],
+      ua: currency[4],
+      ru: currency[5],
     },
     buyRate: currency[6],
     sellRate: currency[7],
