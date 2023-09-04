@@ -57,6 +57,13 @@ export const createCalculator = async () => {
       const fromCurrency = child.dataset.value;
       const toCurrency = toSelect.innerText;
 
+      Array.from(toSelectDropdown.children).forEach((child) =>
+        child.classList.remove("disabled")
+      );
+      const item = selectEls[1].querySelector(`[data-value="${fromCurrency}"]`);
+
+      item.classList.add("disabled");
+
       const result = convertCurrency(
         value,
         fromCurrency,
@@ -73,6 +80,13 @@ export const createCalculator = async () => {
       const value = toInput.value || 0;
       const fromCurrency = fromSelect.innerText;
       const toCurrency = child.dataset.value;
+
+      Array.from(fromSelectDropdown.children).forEach((child) =>
+        child.classList.remove("disabled")
+      );
+      const item = selectEls[0].querySelector(`[data-value="${toCurrency}"]`);
+
+      item.classList.add("disabled");
 
       const result = convertCurrency(
         value,
@@ -112,6 +126,16 @@ export const createCalculator = async () => {
 
     toInput.value = result;
   });
+
+  Array.from(toSelectDropdown.children).forEach((child) =>
+    child.classList.remove("disabled")
+  );
+
+  const item = selectEls[1].querySelector(
+    `[data-value="${fromSelect.innerText}"]`
+  );
+
+  item.classList.add("disabled");
 };
 
 const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
@@ -132,10 +156,6 @@ const convertCurrency = (amount, fromCurrency, toCurrency, currencies) => {
     const convertedAmount = amount * fromRate;
 
     return convertedAmount.toFixed(2);
-  }
-
-  if (toCurrency === fromCurrency) {
-    return (amount * 1).toFixed(2);
   }
 
   if (!from || !to) {

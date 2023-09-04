@@ -198,6 +198,11 @@
       column-gap: 1em;
       cursor: pointer;
 
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.3;
+      }
+
       &-icon {
         img {
           width: 24px;
