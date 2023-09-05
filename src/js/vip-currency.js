@@ -7,17 +7,30 @@ export const createVipCurrency = async () => {
 
   const currencyItemEls = document.querySelectorAll('[data-el="currency"]');
   const currencyCodeEls = document.querySelectorAll('[data-el="code"]');
+  const currencyAmountEls = document.querySelectorAll('[data-el="amount"]');
 
-  const usd = currencies.find(
+  const currency = currencies.find(
     (currency) => currency.code.toLowerCase() === currencyCode.toLowerCase()
   );
 
   currencyItemEls.forEach((currencyItem) => {
     const type = currencyItem.dataset.type;
-    currencyItem.textContent = usd[type];
+
+    if (!currency) {
+      return null;
+    }
+
+    currencyItem.textContent = currency[type];
   });
 
   currencyCodeEls.forEach((currencyCodeEl) => {
     currencyCodeEl.textContent = currencyCode.toUpperCase();
+  });
+
+  currencyAmountEls.forEach((currencyAmountEl) => {
+    if (!currency) {
+      return null;
+    }
+    currencyAmountEl.textContent = currency.qty;
   });
 };
