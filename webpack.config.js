@@ -72,6 +72,10 @@ const setupPlugins = () => {
       template: "./calculator.html",
       filename: "calculator.html",
     }),
+    new HtmlWebpackPlugin({
+      template: "./vip-currency.html",
+      filename: "vip-currency.html",
+    }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
