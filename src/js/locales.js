@@ -15,6 +15,8 @@ export const translations = {
     "KALKULÁTOR NEJVÝHODNĚJŠÍCH KURZŮ": "KALKULÁTOR NEJVÝHODNĚJŠÍCH KURZŮ",
     "Mám měnu": "Mám měnu",
     "Chci vyměnit": "Chci vyměnit",
+    Nákup: "Nákup",
+    Prodej: "Prodej",
   },
   en: {
     Měna: "Currency",
@@ -26,6 +28,8 @@ export const translations = {
     "KALKULÁTOR NEJVÝHODNĚJŠÍCH KURZŮ": "BEST RATE CALCULATOR",
     "Mám měnu": "Currency",
     "Chci vyměnit": "Amount",
+    Nákup: "Purchase",
+    Prodej: "Sale",
   },
   ru: {
     Měna: "Валюта",
@@ -37,6 +41,8 @@ export const translations = {
     "KALKULÁTOR NEJVÝHODNĚJŠÍCH KURZŮ": "ЛУЧШИЙ КАЛЬКУЛЯТОР КУРСОВ",
     "Mám měnu": "Валюта",
     "Chci vyměnit": "Кол-во",
+    Nákup: "Покупка",
+    Prodej: "Продажа",
   },
   ua: {
     Měna: "Валюта",
@@ -48,6 +54,8 @@ export const translations = {
     "KALKULÁTOR NEJVÝHODNĚJŠÍCH KURZŮ": "КРАЩИЙ КАЛЬКУЛЯТОР КУРСІВ",
     "Mám měnu": "Валюта",
     "Chci vyměnit": "К-сть",
+    Nákup: "Купівка",
+    Prodej: "Продаж",
   },
 };
 
